@@ -4,9 +4,7 @@ from datetime import datetime
 
 ARQUIVO = "treinos.txt"
 
-# ──────────────────────────────────────────────
-#  PERSISTÊNCIA
-# ──────────────────────────────────────────────
+#  salvar e carregar dados
 
 def carregar_treinos():
     if os.path.exists(ARQUIVO):
@@ -18,9 +16,8 @@ def salvar_treinos(treinos):
     with open(ARQUIVO, "w", encoding="utf-8") as f:
         json.dump(treinos, f, ensure_ascii=False, indent=4)
 
-# ──────────────────────────────────────────────
 #  UTILITÁRIOS
-# ──────────────────────────────────────────────
+
 
 def limpar_tela():
     os.system("cls" if os.name == "nt" else "clear")
@@ -52,9 +49,7 @@ def proximo_id(treinos):
         return 1
     return max(t["id"] for t in treinos) + 1
 
-# ──────────────────────────────────────────────
-#  1. ADICIONAR TREINO
-# ──────────────────────────────────────────────
+#  ADICIONAR TREINO
 
 def adicionar_treino(treinos):
     limpar_tela()
@@ -98,9 +93,7 @@ def adicionar_treino(treinos):
     print(f"\n  ✅  Treino '{nome}' adicionado com sucesso! (ID: {treino['id']})")
     pausar()
 
-# ──────────────────────────────────────────────
-#  2. LISTAR TREINOS
-# ──────────────────────────────────────────────
+#  LISTAR TREINOS
 
 def listar_treinos(treinos):
     limpar_tela()
@@ -112,7 +105,6 @@ def listar_treinos(treinos):
         pausar()
         return
 
-    # Ordena por data e hora
     ordenados = sorted(treinos, key=lambda t: (
         datetime.strptime(t["data"], "%d/%m/%Y"),
         t["hora"]
@@ -130,9 +122,7 @@ def listar_treinos(treinos):
     print(f"\n  Total: {len(treinos)} treino(s)")
     pausar()
 
-# ──────────────────────────────────────────────
-#  3. EDITAR TREINO
-# ──────────────────────────────────────────────
+#  EDITAR TREINO
 
 def editar_treino(treinos):
     limpar_tela()
@@ -194,9 +184,7 @@ def editar_treino(treinos):
     print(f"\n  ✅  Treino atualizado com sucesso!")
     pausar()
 
-# ──────────────────────────────────────────────
-#  4. REMOVER TREINO
-# ──────────────────────────────────────────────
+#  REMOVER TREINO
 
 def remover_treino(treinos):
     limpar_tela()
@@ -230,9 +218,7 @@ def remover_treino(treinos):
         print("  ❌  Remoção cancelada.")
     pausar()
 
-# ──────────────────────────────────────────────
-#  5. MARCAR COMO CONCLUÍDO
-# ──────────────────────────────────────────────
+#  MARCAR COMO CONCLUÍDO
 
 def marcar_concluido(treinos):
     limpar_tela()
@@ -272,9 +258,7 @@ def marcar_concluido(treinos):
         print(f"\n  🎉  '{treino['nome']}' marcado como concluído!")
     pausar()
 
-# ──────────────────────────────────────────────
-#  6. BUSCAR POR DATA
-# ──────────────────────────────────────────────
+#  BUSCAR POR DATA
 
 def buscar_por_data(treinos):
     limpar_tela()
@@ -303,9 +287,8 @@ def buscar_por_data(treinos):
         print(f"  {'─'*46}")
     pausar()
 
-# ──────────────────────────────────────────────
 #  MENU PRINCIPAL
-# ──────────────────────────────────────────────
+
 
 def menu():
     treinos = carregar_treinos()
@@ -345,14 +328,17 @@ def menu():
         elif opcao == "0":
             limpar_tela()
             print("\n  Até logo! Continue treinando! 💪\n")
+            print("=" * 50)
+            print("  Desenvolvido por:")
+            print("    • Gustavo Matias")
+            print("    • Lucas Faelis Carlos")
+            print("    • Miguel Lumitti")
+            print("    • Rafael Carracci")
+            print("=" * 50 + "\n")
             break
         else:
             print("\n  ⚠️  Opção inválida. Tente novamente.")
             pausar()
-
-# ──────────────────────────────────────────────
-#  PONTO DE ENTRADA
-# ──────────────────────────────────────────────
 
 if __name__ == "__main__":
     menu()
