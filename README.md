@@ -119,10 +119,10 @@ Desenvolvido como projeto acadêmico por:
 
 | Nome | GitHub |
 |---|---|
-| Gustavo Matias | [@gustavo]([https://github.com/](https://github.com/gus-ms)) |
-| Lucas Faelis Carlos | [@lucas]([https://github.com/](https://github.com/Khaosxxx)) |
+| Gustavo Matias | [@gustavo]([https://github.com/](https://github.com/gus-ms) |
+| Lucas Faelis | [@lucas]([https://github.com/](https://github.com/Khaosxxx) |
 | Miguel Lumitti | [@miguel](https://github.com/) |
-| Rafael Carracci | [@rafael]([https://github.com/](https://github.com/rafaelCarracci)) |
+| Rafael Carracci | [@rafael]([https://github.com/](https://github.com/rafaelCarracci) |
 
 ---
 
