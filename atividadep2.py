@@ -331,7 +331,7 @@ def menu():
             print("=" * 50)
             print("  Desenvolvido por:")
             print("    • Gustavo Matias")
-            print("    • Lucas Faelis Carlos")
+            print("    • Lucas Carlos")
             print("    • Miguel Lumitti")
             print("    • Rafael Carracci")
             print("=" * 50 + "\n")
